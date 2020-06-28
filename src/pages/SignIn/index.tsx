@@ -13,12 +13,19 @@ const SignIn: React.FC = () => {
     <Container>
       <Image source={logoImg} />
 
-      <Title> Faça seeu Logon </Title>
+      <Title> Faça seu Logon </Title>
 
-      <Input />
-      <Input />
+      <Input name="email" icon="mail" placeholder="E-mail" />
 
-      <Button> Entrar </Button>
+      <Input name="password" icon="lock" placeholder="Senha" />
+
+      <Button
+        onPress={() => {
+          console.log('botao');
+        }}
+      >
+        Entrar
+      </Button>
     </Container>
   );
 };
