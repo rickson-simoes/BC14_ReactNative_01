@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Input from '../../components/input';
+import Button from '../../components/button';
 
 import logoImg from '../../assets/logo.png';
 
