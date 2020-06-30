@@ -6,7 +6,7 @@ import Button from '../../components/button';
 
 import logoImg from '../../assets/logo.png';
 
-import { Container, Title } from './styles';
+import { Container, Title, ForgotPassword } from './styles';
 
 const SignIn: React.FC = () => {
   return (

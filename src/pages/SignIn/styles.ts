@@ -13,3 +13,5 @@ export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
   margin: 64px 0 24px;
 `;
+
+export const ForgotPassword = styled.Text``;
