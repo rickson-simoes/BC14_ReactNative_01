@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
+import { CheckBox } from 'react-native';
 import api from '../services/api';
 
 interface AuthState {
@@ -32,14 +33,18 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>({} as AuthState);
 
   useEffect(() => {
-    const token = localStorage.getItem('@GoBarber:Token');
-    const user = localStorage.getItem('@GoBarber:User');
+    async function loadStoragedData(): Promise<void> {
+      const [token, user] = await AsyncStorage.multiGet([
+        '@GoBarber:Token',
+        '@GoBarber:User',
+      ]);
 
-    if (token && user) {
-      return { token, user: JSON.parse(user) };
+      if (token[1] && user[1]) {
+        setData({ token: token[1], user: JSON.parse(user[1]) });
+      }
     }
 
-    return {} as AuthState;
+    loadStoragedData();
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {
