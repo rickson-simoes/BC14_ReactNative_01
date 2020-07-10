@@ -8,8 +8,7 @@ const App = createStackNavigator();
 const AppRoutes: React.FC = () => (
   <App.Navigator
     screenOptions={{
-      headerShown: true,
-      headerTitle: 'Rota de Dashboard',
+      headerShown: false,
       cardStyle: { backgroundColor: '#312e38' },
     }}
   >
